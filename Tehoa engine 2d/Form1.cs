@@ -23,9 +23,10 @@ namespace Tehoa_engine_2d
         {
             objetOnScene.Add(new GameObject
             {
-                position = new Vector2(2,3),
-                name = "Test",
-                spritePath = "c:/Hiu"
+                Position = new Vector2(2,3),
+                Name = inputBoxName.Text,
+                Type = comboBoxType.Text,
+                SpritePath = "c:/Hiu"
             });
             UpdateList();
         }
@@ -33,9 +34,9 @@ namespace Tehoa_engine_2d
         private void UpdateList()
         {
             SceneItems.Items.Clear();
-            for (int i = 0; i < objetOnScene.Count; i++)
+            foreach (var item in objetOnScene)
             {
-                SceneItems.Items.Add(objetOnScene[i].name);
+                SceneItems.Items.Add(item.Name+" (Type: "+item.Type+")");
             }
         }
     }

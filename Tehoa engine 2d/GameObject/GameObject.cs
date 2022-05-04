@@ -13,9 +13,11 @@ namespace Tehoa_engine_2d
         {
 
         }
-        public Vector2 position { get; set; }
-        public string name { get; set; }
-        public string spritePath { get; set; }
+        public Vector2 Position { get; set; }
+        public string Name { get; set; }
+
+        public string Type { get; set; }
+        public string SpritePath { get; set; }
         
     }
 }

@@ -32,8 +32,9 @@
             this.OpenScene = new System.Windows.Forms.Button();
             this.LoadScene = new System.Windows.Forms.Button();
             this.CreateObject = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.inputBoxName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,21 +66,13 @@
             // 
             // CreateObject
             // 
-            this.CreateObject.Location = new System.Drawing.Point(24, 363);
+            this.CreateObject.Location = new System.Drawing.Point(9, 90);
             this.CreateObject.Name = "CreateObject";
-            this.CreateObject.Size = new System.Drawing.Size(89, 23);
+            this.CreateObject.Size = new System.Drawing.Size(121, 23);
             this.CreateObject.TabIndex = 3;
             this.CreateObject.Text = "Create object";
             this.CreateObject.UseVisualStyleBackColor = true;
             this.CreateObject.Click += new System.EventHandler(this.CreateObject_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(118, 329);
-            this.listBox1.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -89,13 +82,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(920, 524);
             this.dataGridView1.TabIndex = 5;
             // 
+            // comboBoxType
+            // 
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
+            "Text",
+            "Sprite"});
+            this.comboBoxType.Location = new System.Drawing.Point(9, 38);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxType.TabIndex = 6;
+            this.comboBoxType.Text = "Sprite";
+            // 
+            // inputBoxName
+            // 
+            this.inputBoxName.Location = new System.Drawing.Point(9, 12);
+            this.inputBoxName.Name = "inputBoxName";
+            this.inputBoxName.Size = new System.Drawing.Size(121, 20);
+            this.inputBoxName.TabIndex = 7;
+            this.inputBoxName.Text = "Name";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 665);
+            this.Controls.Add(this.inputBoxName);
+            this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.CreateObject);
             this.Controls.Add(this.LoadScene);
             this.Controls.Add(this.OpenScene);
@@ -104,6 +118,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,8 +128,9 @@
         private System.Windows.Forms.Button OpenScene;
         private System.Windows.Forms.Button LoadScene;
         private System.Windows.Forms.Button CreateObject;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.TextBox inputBoxName;
     }
 }
 
