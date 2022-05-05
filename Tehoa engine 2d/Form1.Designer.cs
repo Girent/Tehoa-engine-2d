@@ -1,4 +1,6 @@
-﻿namespace Tehoa_engine_2d
+﻿using System;
+
+namespace Tehoa_engine_2d
 {
     partial class Form1
     {
@@ -30,11 +32,14 @@
         {
             this.SceneItems = new System.Windows.Forms.ListBox();
             this.OpenScene = new System.Windows.Forms.Button();
-            this.LoadScene = new System.Windows.Forms.Button();
+            this.SaveScene = new System.Windows.Forms.Button();
             this.CreateObject = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.inputBoxName = new System.Windows.Forms.TextBox();
+            this.SaveObject = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +50,7 @@
             this.SceneItems.Name = "SceneItems";
             this.SceneItems.Size = new System.Drawing.Size(370, 524);
             this.SceneItems.TabIndex = 0;
+            this.SceneItems.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SceneItems_MouseDoubleClick);
             // 
             // OpenScene
             // 
@@ -54,15 +60,17 @@
             this.OpenScene.TabIndex = 1;
             this.OpenScene.Text = "Open scene";
             this.OpenScene.UseVisualStyleBackColor = true;
+            this.OpenScene.Click += new System.EventHandler(this.OpenScene_Click);
             // 
-            // LoadScene
+            // SaveScene
             // 
-            this.LoadScene.Location = new System.Drawing.Point(93, 630);
-            this.LoadScene.Name = "LoadScene";
-            this.LoadScene.Size = new System.Drawing.Size(75, 23);
-            this.LoadScene.TabIndex = 2;
-            this.LoadScene.Text = "Load scene";
-            this.LoadScene.UseVisualStyleBackColor = true;
+            this.SaveScene.Location = new System.Drawing.Point(93, 630);
+            this.SaveScene.Name = "SaveScene";
+            this.SaveScene.Size = new System.Drawing.Size(75, 23);
+            this.SaveScene.TabIndex = 2;
+            this.SaveScene.Text = "Save scene";
+            this.SaveScene.UseVisualStyleBackColor = true;
+            this.SaveScene.Click += new System.EventHandler(this.SaveScene_Click);
             // 
             // CreateObject
             // 
@@ -102,16 +110,39 @@
             this.inputBoxName.TabIndex = 7;
             this.inputBoxName.Text = "Name";
             // 
+            // SaveObject
+            // 
+            this.SaveObject.Location = new System.Drawing.Point(1357, 542);
+            this.SaveObject.Name = "SaveObject";
+            this.SaveObject.Size = new System.Drawing.Size(75, 23);
+            this.SaveObject.TabIndex = 8;
+            this.SaveObject.Text = "Save object";
+            this.SaveObject.UseVisualStyleBackColor = true;
+            this.SaveObject.Click += new System.EventHandler(this.SaveObject_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "th";
+            this.saveFileDialog1.FileName = "Scene";
+            this.saveFileDialog1.Filter = "Tehoa files (*.th)|*.th";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "th";
+            this.openFileDialog1.FileName = "Scene";
+            this.openFileDialog1.Filter = "Tehoa files (*.th)|*.th";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 665);
+            this.Controls.Add(this.SaveObject);
             this.Controls.Add(this.inputBoxName);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CreateObject);
-            this.Controls.Add(this.LoadScene);
+            this.Controls.Add(this.SaveScene);
             this.Controls.Add(this.OpenScene);
             this.Controls.Add(this.SceneItems);
             this.Name = "Form1";
@@ -122,15 +153,20 @@
 
         }
 
+  
+
         #endregion
 
         private System.Windows.Forms.ListBox SceneItems;
         private System.Windows.Forms.Button OpenScene;
-        private System.Windows.Forms.Button LoadScene;
+        private System.Windows.Forms.Button SaveScene;
         private System.Windows.Forms.Button CreateObject;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.TextBox inputBoxName;
+        private System.Windows.Forms.Button SaveObject;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
